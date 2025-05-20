@@ -1,4 +1,5 @@
 from housing_data import square_footage, housing_prices
+from my_grad_desc import mygradesc
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -6,10 +7,14 @@ import numpy as np
 X = [l/max(square_footage) for l in square_footage]
 y = [l/max(housing_prices) for l in housing_prices]
 
-lr = 0.01
+# Try different learning rates
+# case 1) learning_rate too big. Loss bounces around, see oscillating graph
+# case 2) learning_rate too small. Takes too long to converge, poor result or takes many iterations
+# case 3) goldie locks just right
+lr = 0.1
 iterations = 1000
 
-b_1, loss_history = my_gradient_descent(X,y,lr,iterations)
+b_1, loss_history = mygradesc(X,y,lr,iterations)
 
 # Expect near 1
 print(f'Slope fitted {b_1}')
