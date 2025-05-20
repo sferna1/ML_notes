@@ -16,7 +16,7 @@ def mygradesc(x, y, learning_rate, iterations):
 		total_deriv = (1/n)*(2*b)*deriv_loss
 		b = b - learning_rate*total_deriv
 		loss_history.append(total_loss) #adds the current value of 
- total loss to the list, continues until iterations have reached
+# total loss to the list, continues until iterations have reached
 
 	return b, loss_history
 
