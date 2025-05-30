@@ -14,10 +14,10 @@ y = [l/max(housing_prices) for l in housing_prices]
 lr = 0.1
 iterations = 1000
 
-b_1, loss_history = mygradesc(X,y,lr,iterations)
+b0, b1, loss_history = mygradesc(X,y,lr,iterations)
 
 # Expect near 1
-print(f'Slope fitted {b_1}')
+print(f'Intercept fitted {b0} \nSlope fitted {b1}')
 
 # Plotting data and fitted line
 
@@ -29,7 +29,7 @@ axes[0].set_ylabel('Housing Price')
 
 #b. Plotting fitted line
 x_line = np.linspace(0,max(X),100)
-y_line = x_line*b_1
+y_line = x_line*b1 + b0
 axes[0].plot(x_line,y_line,'r')
 
 
